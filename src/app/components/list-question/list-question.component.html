@@ -1,0 +1,11 @@
+<div>
+    <h1>Questões já cadastradas</h1>
+    <section class="grid">
+
+        <div class="item" *ngFor="let question of listQuestion">
+            {{ question.question }}
+            <a class="linkAnswer" [routerLink]="['/resposta', question.id]"> <span>total de respostas: {{question.answerQuantity}}</span>
+            </a>
+        </div>
+    </section>
+</div>

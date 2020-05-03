@@ -1,10 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-component',
+  template: '<router-outlet></router-outlet>'
 })
-export class AppComponent {
-  title = 'exam-bexs';
+export class AppComponent implements OnInit {
+
+  constructor(
+    private readonly router: Router) {
+
+    router.events.subscribe((navigation) => {
+      if (navigation instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+      }
+    });
+  }
+
+  ngOnInit() {
+   
+  }
 }

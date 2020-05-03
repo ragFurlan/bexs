@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "exam-bexs"
+    }
+  },
+  "defaultProject": "exam-bexs",
+  "cli": {
+    "analytics": false
+  }
 }
