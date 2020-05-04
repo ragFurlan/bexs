@@ -1,1 +1,9 @@
-<p>list-answer works! {{id| async}}</p>
+<div>
+    <h1>Respostas:</h1>
+    <section class="grid">
+
+        <div class="item" *ngFor="let answer of listAnswer">
+            {{ answer.answer }}          
+        </div>
+    </section>
+</div>

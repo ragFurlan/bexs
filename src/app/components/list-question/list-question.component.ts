@@ -33,5 +33,4 @@ export class ListQuestionComponent implements OnInit {
       }
     ];
   }
-
 }
