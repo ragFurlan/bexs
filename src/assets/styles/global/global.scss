@@ -1,0 +1,542 @@
+body {
+  background-color: #fff;
+  color: #444;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+.header {
+  padding: 15px 0;
+  background-color: #fff;
+  box-shadow: 0 0px 8px 3px rgba(0,0,0,0.1);
+  position: relative;
+  top: 0;
+}
+
+main {
+  margin: 0 0 25px 0;
+}
+
+.pre-checkup, .instrucoes, .deslocamento, .pos-checkup, .questionario {
+  margin: 30px 0 60px 0;
+}
+
+h2 {
+  color: #ed0f69;
+  font-size: 1.3em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+h3 {
+  color: #4a4a4a;
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  font-size: 1em;
+  color: #4a4a4a;
+  opacity: .9;
+}
+
+p span {
+  color: #ed0f69;
+  font-weight: 600;
+}
+.italico{
+  font-style: italic !important;
+}
+
+a {
+  color: #ed0f69;
+  outline: 0;
+}
+
+a:hover {
+  color: #ed0f69;
+  text-decoration: underline;
+}
+
+small {
+  font-size: .8em;
+  font-weight: 400;
+}
+
+.none {
+  display: none !important;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.right {
+  float: right !important;
+}
+
+.left {
+  float: left !important;
+}
+
+ul.paginacao {
+  margin-top: 10px;
+}
+
+.paginacao li {
+  display: inline-block;
+  padding: 0 10px 0 0;
+}
+
+.paginacao h4 {
+  font-size: 1.3em;
+  position: relative;
+  top: -4px;
+}
+
+
+/******* Cabeçalho ********/
+.header img {
+  height: 40px;
+}
+
+.header h2 {
+  margin: 3px 0 0px 0;
+  text-align: center;
+}
+
+.header .dropdown {
+  margin-top: 5px;
+}
+
+.header .usuario-logado {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.dropdown a.menu {
+  font-size: 1em;
+  color: #ed0f69;
+}
+
+.header .dropdown #local-exame {
+  font-size: 1em;
+  color: #4a4a4a;
+}
+
+.dropdown a.menu:hover {
+  color: #ed0f69;
+  text-decoration: none;
+}
+
+.dropdown a.menu:focus {
+  text-decoration: none;
+}
+
+.dropdown a.menu i {
+  font-size: 1.4em;
+  color: #ed0f69;
+}
+
+.open > .dropdown-menu {
+  border-radius: 0;
+  margin-top: 25px;
+  width: 100%;
+  border-top: 3px solid #ed0f69;
+  padding: 0;
+}
+
+.dropdown-menu li a {
+  font-size: 1em;
+  opacity: .7;
+  padding: 7px 20px;
+}
+
+.dropdown-menu a:hover {
+  background-color: transparent;
+  color: #000;
+  opacity: 1;
+}
+
+.dropdown-menu i {
+  color: #fecd1f;
+}
+
+.dropdown-menu li {
+  padding: 0;
+  margin: 0;
+}
+
+.header .dropdown-menu li.logout {
+  background-color: #f7f7f7;
+}
+ 
+.titulo-cabecalho {
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+  background-color: #fbfbfb;
+  margin-bottom: 10px;
+}
+
+.titulo-cabecalho h2 {
+  font-weight: 600;
+  font-size: 1.3em;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.titulo-cabecalho h2 span {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: .8em;
+  text-transform: uppercase;
+}
+
+.menu {
+  padding: 20px 22px 5px;
+  background-color: #fbfbfb;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.menu img{
+  padding: 0 2px;
+  width: 103px;
+}
+
+.menu h2 {
+  color: #ed0f69;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  margin: 20px;
+  display: inline-block;
+}
+
+/*** PREPARO *****/
+.pre-checkup a {
+  font-size: 1.4em;
+  text-align: center;
+  margin: 20px 0;
+  display: block;
+}
+
+.pre-checkup ul {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 5px;
+}
+
+.pre-checkup li {
+  color: #666;
+  background-color: #fff;
+  border: 1px solid #ed0f69;
+  border-radius: 3px;
+  padding: 15px 6px;
+  width: 31.5%;
+  margin: .5%;
+  display: table-cell;
+  height: 110px;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 18px;
+  font-size: .95em;
+}
+
+.pre-checkup a {
+  font-size: 1.4em;
+  text-align: center;
+  margin: 20px 0;
+  display: block;
+}
+
+.preparo-checkup {
+  padding: 0 10px;
+  margin: 0 0 20px 0;
+}
+
+.deslocamento i {
+  font-size: 12.5em;
+  line-height: 0;
+}
+
+.instrucoes h3 {
+  margin: 40px 0 20px 0;
+  color: #000;
+  font-size: 1.3em;
+}
+
+.instrucoes h4 {
+  margin: 30px 0 20px 0;
+  color: #000;
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+/*** Cabeçalho Questionário *****/
+.cabecalho-preCheckUp {
+  padding: 15px 15px 25px 15px;
+  background-color: #fbfbfb;
+  border-bottom: 1px solid #ddd;
+}
+.cabecalho-preCheckUp img{
+  width: 85px;
+}
+.cabecalho-preCheckUp h2 {
+  margin: 5px 0;
+  text-transform: uppercase;
+}
+
+.cabecalho-preCheckUp h3 {
+  margin: 7px 0 0 0;
+  text-transform: uppercase;
+}
+
+.cabecalho-icon {
+  background-color: #ed0f69;
+  border-radius: 5px;
+  height: 70px;
+  width: 100%;
+  text-align: center;
+}
+
+.cabecalho-preCheckUp i {
+  color: #fff;
+  font-size: 4em;
+  padding: 7px;
+  line-height: 65px;
+}
+
+.questionario .icon-questionario{
+  margin: 20px auto;
+  display: block;
+}
+.questionario .icon-foto{
+  height: 49px;
+}
+.questionario select, .questionario input {
+  height: 45px !important;
+}
+
+.questionario h3 {
+  text-align: center;
+  font-size: 1.3em;
+  margin: 0 0 20px 0;
+}
+
+.questionario h4 {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.questionario .btn-secundario{
+  width: 100%;
+}
+.questionario .btn-group{
+  display: block;
+}
+
+.questionario i.icon-destaque {
+  color: #ed0f69;
+  font-size: 6em;
+  text-align: center;
+  display: block;
+  margin: 20px 0;
+}
+
+.questionario i {
+  color: #ed0f69;
+  font-size: 4.85em;
+  text-align: center;
+  display: block;
+  line-height: 0;
+}
+
+.questionario label {
+  display: inline-block;
+  max-width: 100%;
+  margin: 10px 0;
+  font-weight: 700;
+  font-size: .9em;
+}
+.questionario small{
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.endereco-unidade {
+  text-align: center;
+  border-color: #ed0f69;
+  margin: 30px 0 0 0;
+}
+
+.endereco-unidade h3 {
+  color: #ed0f69;
+  font-size: 2em;
+  margin: 5px 0;
+}
+
+.endereco-unidade p {
+  display: block;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.endereco-unidade small {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.endereco-unidade .btn {
+  width: 60%;
+  display: block;
+  margin: 30px auto 25px;
+  font-size: 99%;
+}
+
+ul.app {
+  margin: 20px 0;
+  display: none;
+}
+
+ul.app > li {
+  width: 15%;
+  margin: 0 5px;
+  display: inline-block;
+}
+
+.endereco-unidade small {
+  display: none;
+}
+
+/**** Barra de NAvegação ****/
+.navegacao {
+  margin-top: 40px;
+}
+
+.navegacao .btn {
+  width: 100%;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .titulo-cabecalho h2 {
+    text-align: left !important;
+  }
+
+  .lista-pacientes li {
+    width: 48.95% !important;
+  }
+
+  .info-paciente p {
+    font-size: 1em !important;
+  }
+
+  .avaliacao-atendimento li {
+    width: 3px !important;
+  }
+
+  .avaliacao-atendimento i.ion-ios-chatbubble {
+    margin: 0 0 0 2px !important;
+  }
+
+  .exame-status .avaliacao-atendimento li {
+    width: 7px !important;
+  }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){  
+  .pre-checkup, .instrucoes, .deslocamento, .pos-checkup, .questionario {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header img {
+    height: 30px !important;
+  }
+
+  .header .dropdown, .header h4 {
+    text-align: left !important;
+  }
+
+  .pre-checkup, .instrucoes, .deslocamento, .pos-checkup, .questionario {
+    margin: 30px 0 100px 0;
+  }
+
+  .questionario .btn-group, .questionario .btn-group-vertical {
+    position: relative;
+    display: inherit;;
+    vertical-align: middle;
+  }
+}
+
+@media screen and (max-width: 533px) {
+  .lista-pacientes li {
+    width: 100% !important;
+  }
+  .pre-checkup li {
+    font-size: .75em !important;
+  }
+  .avaliacao-atendimento li {
+    width: 3% !important;
+  }
+  .questionario .btn-secundario{
+    margin: 0 !important;
+  }
+
+  .navegacao {
+    background-color: #fbfbfb;
+    border-top: 1px solid #ddd;
+    padding: 15px 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 500;
+    margin-top: 50px;
+  }
+  
+  .navegacao .btn {
+    width: 100%;
+  }
+
+  .questionario .btn-group .btn-default {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .checkup-etapas ul > li {
+    width: 32.2% !important;
+    height: 90px !important;
+    margin: 4.5% .2% !important;
+    border-radius: 100px !important;
+  }
+}
+
+/* Daterange styles */
+
+.input-group + .popover > .popover-body {
+  padding: 0;
+}
+
+.input-group + .popover {
+  border: 0;
+}

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { QuestionAnswerService } from '../../services/questios.service';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 @Component({
   selector: 'app-list-question',
@@ -8,29 +12,15 @@ import { Component, OnInit } from '@angular/core';
 export class ListQuestionComponent implements OnInit {
 
   listQuestion: any;
-  constructor() { }
+  newQuestion; string;
+  constructor(private questionAnswerService: QuestionAnswerService) { }
 
   ngOnInit(): void {
-    this.listQuestion = this.mokeList();
-  }
+    this.listQuestion = this.questionAnswerService.getList();
+   
+  } 
 
-  mokeList(){
-    return  [
-      { 
-        question: "Qual o seu nome?",
-        answerQuantity: 1,
-        id: 1
-      },
-      { 
-        question: "Quais seus livros preferidos?",
-        answerQuantity: 5,
-        id: 2
-      },
-      { 
-        question: "Quais seus filmes preferidos?",
-        answerQuantity: 4,
-        id: 3
-      }
-    ];
+  onSubmit(form: any) {
+    this.questionAnswerService.postQuestion(form.value.newQuestion);
   }
 }

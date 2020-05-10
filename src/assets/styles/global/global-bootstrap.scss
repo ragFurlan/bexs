@@ -1,0 +1,380 @@
+.alert {
+  color: #fff;
+}
+
+.alert .close {
+  font-size: 2em;
+  font-weight: 300;
+}
+
+.alert .close:hover {
+  color: #fff;
+}
+
+.alert-danger {
+  background-color: #cc3333;
+}
+
+.alert-warning {
+  background-color: #f3bb40;
+}
+
+.alert-success {
+  background-color: #99cc33;
+}
+
+.alert-info {
+  background-color: #0099cc;
+}
+
+select, input, textarea {
+  font-size: 1em !important;
+}
+
+  
+.modal-dialog{
+  max-width: 320px !important;
+}
+
+.radio-checkbox {
+  display: block
+}
+
+.radio-checkbox {
+  position: relative;
+  display: inline-block;
+}
+
+label.radio-checkbox {
+  margin: 15px 0 10px 0;
+}
+
+.label-radio, .label-checkbox {
+  position: absolute;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden
+}
+
+.label-radio + .label-text, .label-checkbox + .label-text {
+  cursor: pointer;
+  margin-right: 1em;
+}
+
+.label-radio + .label-text::before, .label-checkbox + .label-text::before {
+  font-size: .875em;
+  display: inline-block;
+  width: 1.75em;
+  height: 1.75em;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  margin-right: .25em;
+  content: "\00a0";
+  color: white;
+  background-clip: padding-box;
+  background-color: white;
+  text-align: center
+}
+
+.label-radio + .label-text:hover::before, .label-checkbox + .label-text:hover::before {
+  border-color: #ed0f69 !important;
+  box-shadow: 0 0 0 0 #ed0f69 !important
+}
+
+.label-radio:checked + .label-text::before {
+  background-color: #fff;
+  border-color: #ed0f69;
+  box-shadow: 0 0 0 0 #ed0f69;
+  padding: .5px 0 0 0;
+  color: #ed0f69;
+  font-family: FontAwesome;
+  content: "\f111";
+  font-size: .86em;
+}
+
+.label-checkbox:checked + .label-text::before {
+  background-color: #fff;
+  border-color: #ed0f69;
+  box-shadow: 0 0 0 0 #ed0f69;
+  padding: 1px 0 0 0;
+  color: #ed0f69;
+  font-family: FontAwesome;
+  content: "\f00c";
+}
+
+.label-radio:focus + .label-text::before, .label-checkbox:focus + .label-text::before, .label-radio:active + .label-text::before, .label-checkbox:active + .label-text::before {
+  border-color: #ed0f69;
+  box-shadow: 0 0 2px 0 rgba(0,135,212,0.2)
+}
+
+.label-radio + .label-text::before {
+  border-radius: 100%
+}
+
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+.form-control{
+  border-radius: 0;
+}
+
+.form-control:focus {
+  -webkit-box-shadow: 0px 0px 15px 1px #ed0f69;
+  -moz-box-shadow: 0px 0px 15px 1px #ed0f69;
+  box-shadow: 0px 0px 5px 0px #ed0f69;
+  border-color: #ed0f69;
+}
+
+.form-control label {
+  font-size: .9em;
+  padding: 15px 0 0 0 !important;
+}
+/*** Preenchimento obrigatório ****/
+.error input, .error select, .error .btn-default {
+  box-shadow: 0px 0px 5px 0px #cc3333 !important;
+  border-color: #cc3333 !important;
+}
+
+.error label {
+  color: #cc3333 !important;
+}
+
+.btn-secundario:focus,.btn-primary:not([disabled]):not(.disabled).focus, .btn-primary:not([disabled]):not(.disabled):focus, .show>.btn-primary.dropdown-toggle{
+  box-shadow: 0 0 0 0.2rem #ec7fad !important;
+}
+
+.btn-primary:not([disabled]):not(.disabled).active, .btn-primary:not([disabled]):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
+  box-shadow: 0 0 0 0.2rem #ec7fad !important;
+}
+.btn-primary,
+.btn-primary:not([href]):not([tabindex]) {
+  background-color: #ed0f69 !important;
+  border-color: #ed0f69 !important;
+  text-transform: uppercase;
+  padding: 10px;
+  font-size: 1em !important;
+  border: 2px solid #ed0f69 !important;
+  font-weight: bold;
+  cursor: pointer;
+  color:#fff;
+}
+
+.btn-primary:hover,
+.btn-primary:hover:not([href]):not([tabindex]) {
+  background-color: #C50E5B !important;
+  color: #fff;
+}
+
+.btn-secundario,
+.btn-secundario:not([href]):not([tabindex]) {
+  background-color: #fff;
+  border: 2px solid #ed0f69;
+  text-transform: uppercase;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 4px;
+  color: #ed0f69;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-secundario:hover,
+.btn-secundario:hover:not([href]):not([tabindex]) {
+  color: #ed0f69;
+}
+
+.btn-group label {
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-group {
+  width: 100%;
+}
+
+.btn-group .btn-default {
+  border-radius: 5px !important;
+  margin: 3px 5px;
+  color: #999;
+}
+
+
+.btn-default{
+  background-color: #fff !important;
+  border-color: #CCC !important;
+  text-transform: uppercase;
+  padding: 10px;
+  font-size: 1em !important;
+  display: block;
+  margin: 0 auto;
+  font-weight: bold;
+  color: #CCC;
+}
+.btn-default:hover{
+  background-color: #CCC !important;
+}
+
+.btn-group .btn-default:hover {
+  background-color: #CCC !important;
+  color: #fff !important;
+}
+
+.btn-group .btn-default.active {
+  background-color: #ed0f69 !important;
+  border-color: #ed0f69 !important;
+  color: #fff !important;
+}
+
+.btn-group .corridaQuantasVezes, .btn-group .musculacaoQuantasVezes, .btn-group .ginasticaQuantasVezes {
+  width: 10%;
+}
+
+.btn-group .corridaQuantoTempo, .btn-group .musculacaoQuantoTempo, .btn-group .ginasticaQuantoTempo {
+  width: 24%;
+  margin-bottom: 10px;
+}
+
+.input-group-addon{
+   background-color: #fff !important;
+   border-color: #fff !important;
+   padding: 0 13px !important;
+}
+.input-group-addon img{
+  height: 40px !important;
+}
+.datepicker select, .popover select{
+  height: inherit !important;
+}
+
+.progress {
+  border-radius: 0;
+  height: 5px;
+  background-color: #ddd;
+}
+
+.progress-bar {
+  background-color: #ed0f69;
+  box-shadow: none;
+  transition: width .6s ease;
+}
+
+
+
+/*** Datepicker Style ****/
+.bg-primary{
+  background-color: #ed0f69 !important;
+}
+.btn-link{
+  color: #ed0f69;
+  border: none;
+  margin-top: 6px;
+}
+.btn-link:hover{
+  color: #C50E5B;
+}
+.text-info{
+  color: #ed0f69 !important;
+  opacity: .7;
+}
+.custom-day.range, .custom-day:hover{
+  background-color: #ed0f69 !important;
+}
+
+.ngb-dp-months{
+  padding: 40px;
+  font-size: 1.2em;
+}
+.ngb-dp-header{
+  height: 3.25rem !important;
+}
+.ngb-dp-day, .ngb-dp-weekday, .ngb-dp-week-number{
+  padding: 0 20px;
+}
+.ngb-dp-week{
+  width: 100% !important;
+}
+
+
+/************** MEDIA SCREEN ***************/
+
+
+@media screen and (max-width: 1920px){
+  .ngb-dp-day, .ngb-dp-weekday, .ngb-dp-week-number{
+    padding: 0 10px !important;
+  }
+  .ngb-dp-months{
+    font-size: 1.2em !important;
+  }
+}  
+
+@media screen and (max-width: 1820px){
+  .ngb-dp-day, .ngb-dp-weekday, .ngb-dp-week-number{
+    padding: 0 !important;
+  }
+  .ngb-dp-months{
+    font-size: 1em !important;
+  }
+}  
+
+/************** MODIFICA O MENU NA RESOLUÇÃO 992PX ***************/
+@media (max-width: 992px) {
+  .navbar-header {
+    float: none;
+  }
+
+  .navbar-left,
+  .navbar-right {
+    float: none !important;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+
+  .navbar-nav {
+    float: none !important;
+    margin-top: 7.5px;
+  }
+
+  .navbar-nav > li {
+    float: none;
+  }
+
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .collapse.in {
+    display: block !important;
+  }
+}
+
+@media screen and (max-width:736px) {
+  .btn-group .corridaQuantasVezes, .btn-group .musculacaoQuantasVezes, .btn-group .ginasticaQuantasVezes {
+    width: 17.9% !important;
+  }
+
+  .btn-group .corridaQuantoTempo, .btn-group .musculacaoQuantoTempo, .btn-group .ginasticaQuantoTempo {
+    width: 47.8% !important;
+  }
+}

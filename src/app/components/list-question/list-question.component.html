@@ -1,11 +1,29 @@
 <div>
     <h1>Questões já cadastradas</h1>
     <section class="grid">
-
         <div class="item" *ngFor="let question of listQuestion">
-            {{ question.question }}
-            <a class="linkAnswer" [routerLink]="['/resposta', question.id]"> <span>total de respostas: {{question.answerQuantity}}</span>
+            {{ question.text }}
+            <a class="linkAnswer" [routerLink]="['/resposta', question.id]"> <span>total de respostas: {{question.answers.length}}</span>
             </a>
+        </div>
+        <div class="item">
+            <br>
+            <hr/>
+        </div>   
+        <div class="item">
+            <form #formCompleto="ngForm">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label for="pergunta" class="label-text">Deseja fazer uma pergunta?&nbsp;&nbsp;&nbsp;&nbsp;
+                        </label>
+                        <input placeholder="Pergunta" id="pergunta" type="text" class="validate"
+                        ngModel #newQuestion="ngModel" name="newQuestion" id="newQuestion" required>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="submit" class="btn btn-secundario col-2"
+                            (click)="onSubmit(formCompleto);">Salvar</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </section>
 </div>

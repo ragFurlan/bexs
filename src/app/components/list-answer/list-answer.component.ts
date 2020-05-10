@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { QuestionAnswerService } from '../../services/questios.service';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-list-answer',
@@ -10,58 +12,26 @@ import { map } from 'rxjs/operators';
 })
 export class ListAnswerComponent implements OnInit {
   id: string;
-  listAnswer: any;
+  question: any;
+  newAnswer: string;
 
-  constructor(route: ActivatedRoute) {
+  constructor(route: ActivatedRoute, private questionAnswerService: QuestionAnswerService) {
     const idObservable = route.params.pipe(map(p => p.id));
-    idObservable.subscribe(e => 
-      {
-        this.listAnswer = this.mockAnswer().filter(function (el) {
-          return el.questionId.indexOf(e) > -1;
-        });
-      })
-   
+    idObservable.subscribe(e => {
+      console.log(e);
+      this.question = this.questionAnswerService.getList().filter(function (el) {
+        return el.id === parseInt(e);
+      });
 
-    console.log(this.listAnswer.count);
-
+    })
   }
 
   ngOnInit(): void {
 
   }
 
-  mockAnswer() {
-    return [
-      {
-        answer: "Roberta Furlan",
-        questionId: "1",
-        id: "1"
-      },
-      {
-        answer: "O segredo de quem tem.",
-        questionId: "2",
-        id: "2"
-      },
-      {
-        answer: "A alma da vida",
-        questionId: "2",
-        id: "3"
-      },
-      {
-        answer: "Amanhecer",
-        questionId: "2",
-        id: "4"
-      },
-      {
-        answer: "A Grande Guerra",
-        questionId: "3",
-        id: "5"
-      },
-      {
-        answer: "O nome da rosa",
-        questionId: "3",
-        id: "6"
-      }
-    ];
+  onSubmit(form: any) {
+    this.questionAnswerService.postAnswer(form.value.newAnswer);
   }
+
 }

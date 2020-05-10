@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListQuestionComponent } from './components/list-question/list-question.component';
 import { ListAnswerComponent } from './components/list-answer/list-answer.component';
+import { QuestionAnswerService } from '../app/services/questios.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,10 @@ import { ListAnswerComponent } from './components/list-answer/list-answer.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [QuestionAnswerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
