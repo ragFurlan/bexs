@@ -1,0 +1,36 @@
+// Informações de instalação
+1) Instalar https://chocolatey.org/install
+2) https://yarnpkg.com/en/docs/install#windows-stable
+3) Extensao rocktseat react
+4) https://github.com/tonsky/FiraCode
+
+
+//### iniciando um projeto ####//
+1) yarn init -y
+2) code .
+3) yarn add express
+
+
+//### roda o server ###//
+node src/server.js 
+
+//### faz com que atualize o server automaticamente ao salvar as mucancas ###??
+yarn add nodemon -D
+
+//### Debugar apis ###/
+https://insomnia.rest/ baixar
+
+//### Mongo ###//
+mongodb atlas
+robertafurlan
+
+//### trabalhar com banco de dados ###??
+yarn add mongoose
+
+//## site para pesquisar rotas ###??
+http://portquiz.net:XXXX/ onde xxxx é a rota
+
+/// erro de cors
+yarn add cors
+
+
