@@ -18,9 +18,7 @@ export  class ConfigAPIDev {
         config.host = "http://localhost:3333/answer";
         config.json = "";
         config.mock = false;
-        configs.push(config);
-
-     
+        configs.push(config);     
 
         return configs;
        

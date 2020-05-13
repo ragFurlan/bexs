@@ -8,7 +8,7 @@ import { ListAnswerComponent } from './components/list-answer/list-answer.compon
 import { QuestionService } from './services/question.service';
 import { AnswerService } from './services/answer.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { APIRestService } from './../app/API.Reference/APIRest.service';
 import { ConfigService } from './services/config.service';
@@ -39,10 +39,10 @@ export function loadConfig(config: ConfigService) {
   providers: [
     ConfigService,
     {
-        provide: APP_INITIALIZER,
-        useFactory: loadConfig,
-        deps: [ConfigService],
-        multi: true
+      provide: APP_INITIALIZER,
+      useFactory: loadConfig,
+      deps: [ConfigService],
+      multi: true
     },
     QuestionService,
     AnswerService,

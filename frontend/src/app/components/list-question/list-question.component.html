@@ -3,7 +3,8 @@
     <section class="grid">
         <div class="item" *ngFor="let question of listQuestion">
             {{ question.text }}
-            <a class="linkAnswer" [routerLink]="['/resposta', question.id]"> <span>total de respostas: {{question.answers.length}}</span>
+            <a class="linkAnswer" [routerLink]="['/resposta', question._id]"> <span>
+                total de respostas: {{question.answers ? question.answers.length : 0}}</span>
             </a>
         </div>
         <div class="item">

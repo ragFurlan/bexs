@@ -7,7 +7,6 @@ import { ConfigService } from '../services/config.service';
 
 @Injectable()
 export class HttpInterceptor extends Http {
-    // currentUser: User;
     appConfig: any;
 
     constructor(backend: ConnectionBackend, defaultOptions: RequestOptions, private router: Router, private config: ConfigService) {
@@ -18,30 +17,21 @@ export class HttpInterceptor extends Http {
         return this.intercept(super.request(url, options));
     }
 
-    get(url: string, options?: RequestOptionsArgs): Observable<Response> {
-        // url = this.updateUrl(url);
+    get(url: string, options?: RequestOptionsArgs): Observable<Response> {       
         return this.intercept(super.get(url, this.getRequestOptionArgs(options)));
     }
 
     post(url: string, body: string, options?: RequestOptionsArgs): Observable<Response> {
-        // url = this.updateUrl(url);
         return this.intercept(super.post(url, body, this.getRequestOptionArgs(options)));
     }
 
     put(url: string, body: string, options?: RequestOptionsArgs): Observable<Response> {
-        // url = this.updateUrl(url);
         return this.intercept(super.put(url, body, this.getRequestOptionArgs(options)));
     }
 
     delete(url: string, options?: RequestOptionsArgs): Observable<Response> {
-        // url = this.updateUrl(url);
         return this.intercept(super.delete(url, this.getRequestOptionArgs(options)));
-    }
-
-    // private updateUrl(req: string): string {
-    //     this.appConfig = this.config.get();
-    //     return this.appConfig.ServiceAPI + req;
-    // }
+    }   
 
     private getRequestOptionArgs(options?: RequestOptionsArgs): RequestOptionsArgs {
 
@@ -53,15 +43,13 @@ export class HttpInterceptor extends Http {
             options.headers = new Headers();
         }
 
-        // this.currentUser = Util.getUser();
-
         options.headers.append('Accept', 'application/json');
+        options.headers.append('Content-Type', 'application/json');
         // options.headers.append('Cache-Control', 'no-cache');
         // options.headers.append('Access-Control-Allow-Headers', 'Content-Type');
         // options.headers.append('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
         // options.headers.append('access-Control-Allow-Origin', '*');
-        // options.headers.append('Authorization', this.currentUser.token.token_type + ' ' + this.currentUser.token.access_token);
-
+      
         return options;
     }
 

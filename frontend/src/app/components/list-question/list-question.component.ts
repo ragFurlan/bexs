@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionService } from '../../services/question.service';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -16,9 +16,15 @@ export class ListQuestionComponent implements OnInit {
   constructor(private questionService: QuestionService) { }
 
   ngOnInit(): void {
-    this.listQuestion = this.questionService.getList();
-   
-  } 
+
+    this.questionService.getList().subscribe(resp => {
+      this.listQuestion = resp;
+    });
+    // this.questionService.getList().pipe(map(resp => {
+    //   this.listQuestion = resp.json();
+
+    // }));
+  }
 
   onSubmit(form: any) {
     this.questionService.post(form.value.newQuestion);

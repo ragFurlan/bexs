@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 
 module.exports = {
     async post(req, res) {
+        console.log("teste a");
         const { newAnswer, user, idQuestion } = req.body;
 
         const answer = await Answer.create({

@@ -4,7 +4,7 @@ import { environment } from '../../environments/environment';
 import { Observable, forkJoin } from 'rxjs';
 import { map } from 'rxjs/Operators';
 import 'rxjs/Rx';
-import { AppSettingDev } from '../API.Reference/config/appSettings.DEV';
+import { AppSettingDev } from '../API.Reference/appSettings/appSettings.DEV';
 import { ConfigAPIDev } from '../API.Reference/config/configAPI.DEV';
 
 class Config {
