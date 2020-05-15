@@ -30,14 +30,20 @@ module.exports = {
   },
   async post(req, res) {
     const { newQuestion, user } = req.body;
+    console.log(newQuestion);
+    console.log(newQuestion.indexOf('?'));
+
+    let questionFinal = newQuestion.indexOf('?') > -1 ? newQuestion : `${newQuestion}?`;
+    console.log(questionFinal);
     const question = await Question.create({
-      text: newQuestion,
+      text: questionFinal,
       user: user,
       creationDate: Date.now()
     });
 
-    await question.execPopulate();
-    res.json({ "response": "ok" });
+    const questionReturn = await question.execPopulate();
+   
+    res.json(questionReturn);
   }
 
 };
