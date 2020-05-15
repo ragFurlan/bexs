@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "test": "mocha --timeout 100000"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -14,6 +15,9 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^7.1.2",
     "nodemon": "^1.19.3"
   }
 }
