@@ -29,12 +29,9 @@ module.exports = {
     });
   },
   async post(req, res) {
-    const { newQuestion, user } = req.body;
-    console.log(newQuestion);
-    console.log(newQuestion.indexOf('?'));
+    const { newQuestion, user } = req.body;   
 
     let questionFinal = newQuestion.indexOf('?') > -1 ? newQuestion : `${newQuestion}?`;
-    console.log(questionFinal);
     const question = await Question.create({
       text: questionFinal,
       user: user,

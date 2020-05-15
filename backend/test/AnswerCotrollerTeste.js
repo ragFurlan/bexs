@@ -16,7 +16,7 @@ describe('AnswerController', () => {
 
     it('Testando POST ', (done) => {
         let body = {
-            newQuestion: "Qual o seu melhor amigo?",
+            newQuestion: "Meu melhor amigo é o joão",
             user: "ana02", 
             idQuestion: "5ebe785c1080fa34c836f0c6"
         }
