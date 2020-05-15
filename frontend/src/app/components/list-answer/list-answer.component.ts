@@ -36,6 +36,12 @@ export class ListAnswerComponent implements OnInit {
     location.reload();
   }
 
+  onClickLike(likes:  number, _id: string) {    
+    var likes = likes ? likes + 1 : 1;
+    this.answerService.putLikes(likes, _id);
+    location.reload();
+  }
+
   getAnswers(id: string){
     this.answerService.getList().subscribe(resp => {
       this.listAnswer = resp.filter(function (el) {

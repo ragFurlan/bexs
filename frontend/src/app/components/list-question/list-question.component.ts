@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuestionService } from '../../services/question.service';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { map } from 'rxjs/operators';
-import { Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -22,7 +22,13 @@ export class ListQuestionComponent implements OnInit {
   }
 
   onSubmit(form: any) {
-    this.questionService.post(form.value.newQuestion);   
+    this.questionService.post(form.value.newQuestion);
+    location.reload();
+  }
+
+  onClickLike(likes: number, id: string) {
+    var likes = likes ? likes + 1 : 1;
+    this.questionService.putLikes(likes, id);
     location.reload();
   }
 

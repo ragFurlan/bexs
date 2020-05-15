@@ -18,7 +18,8 @@ module.exports = {
         text: question.text,
         user: question.user,
         creationDate: question.creationDate,
-        quantityAnswer: quantidade
+        quantityAnswer: quantidade,
+        likes: question.likes
       };
       retorno.push(questionItem);
 
@@ -29,7 +30,7 @@ module.exports = {
     });
   },
   async post(req, res) {
-    const { newQuestion, user } = req.body;   
+    const { newQuestion, user } = req.body;
 
     let questionFinal = newQuestion.indexOf('?') > -1 ? newQuestion : `${newQuestion}?`;
     const question = await Question.create({
@@ -39,8 +40,19 @@ module.exports = {
     });
 
     const questionReturn = await question.execPopulate();
-   
+
     res.json(questionReturn);
+  },
+  async put(req, res) {
+    Question.updateOne(
+      { '_id': req.query.id },
+      req.body,
+      { new: true },
+      (err, question) => {
+        if (err) return res.status(500).send(err);
+        return res.json(question);
+      }
+    )
   }
 
 };

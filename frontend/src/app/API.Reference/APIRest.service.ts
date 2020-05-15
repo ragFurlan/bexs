@@ -51,6 +51,23 @@ export class APIRestService {
         }
     }
 
+    public put(apiName: string, body: any, params?: string[]): void {
+        const endPoint = this.getUrl(apiName, undefined);
+
+        if (endPoint.mock) {
+            this.http.get(endPoint.url, this.optionArgs())
+                .subscribe(resp => {
+                    //resp = this.tratarMock(resp, params, 'post');
+
+                    return resp;
+                }, catchError(this.handleError));
+        } else {
+            this.http.put(endPoint.url + "?id="+ params[0], body, this.optionArgs()).subscribe(),
+                catchError(this.handleError);
+        }
+    }
+
+
     public getUrl(name: string, params?: string[]): any {
         const _config = config.configAPI.filter(x => x.name === name).pop();
 
@@ -73,38 +90,6 @@ export class APIRestService {
 
         return retorno;
     }
-
-    // /**
-    //  * Método que percorre a lista de parâmetros para decidir qual mock será retornado.
-    //  * @param retorno Objeto de mock que contém todos os mocks da lista.
-    //  * @param params Parametros utilizados para selecionar o mock correto.
-    //  * @param metodo Método utilizado na chamada Http.
-    //  * @returns Caso haja alguma compatibilidade nos parâmetros retorna o mock encontrado,
-    //  * caso contrário retorna o objeto default daquele serviço.
-    //  */
-    // private tratarMock(retorno: any, params?: string[], metodo?: string): any {
-    //     for (const address in retorno[metodo]) {
-    //         if (address) {
-    //             const parts = address.split('/');
-    //             if (params && params.length === parts.length) {
-    //                 let isMatch = true;
-
-    //                 for (let i = 0; i < params.length; i++) {
-    //                     if (parts[i] !== '*' && parts[i] !== params[i]) {
-    //                         isMatch = false;
-    //                         break;
-    //                     }
-    //                 }
-
-    //                 if (isMatch) {
-    //                     return retorno[metodo][address];
-    //                 }
-    //             }
-    //         }
-    //     }
-
-    //     return retorno[metodo].default;
-    // }
 
     private optionArgs(): any {
 

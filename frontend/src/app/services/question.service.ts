@@ -12,7 +12,10 @@ export class QuestionService {
         return retorno;
     }
 
-    post(newQuestion: string): void {      
-        this.apiRest.post('question', JSON.stringify({ newQuestion, "user": "ana01" }));      
+    post(newQuestion: string): void {
+        this.apiRest.post('question', JSON.stringify({ newQuestion, "user": "ana01" }));
+    }
+    putLikes(likes: number, _id: string, ) {
+        this.apiRest.put('question', JSON.stringify({ _id, "likes": likes }), [_id]);
     }
 }

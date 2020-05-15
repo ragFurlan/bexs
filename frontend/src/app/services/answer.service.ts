@@ -15,4 +15,8 @@ export class AnswerService {
     post(newAnswer: string, idQuestion: string) {      
       this.apiRest.post('answer', JSON.stringify({ newAnswer, user: "beto01", idQuestion}));
     }
+
+    putLikes(likes:  number, _id: string) {   
+      this.apiRest.put('answer', JSON.stringify({ _id, "likes": likes }), [_id]);
+    }
 }

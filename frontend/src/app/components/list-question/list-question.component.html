@@ -2,6 +2,8 @@
     <h1>Questões já cadastradas</h1>
     <section class="grid">
         <div class="item" *ngFor="let question of listQuestion">
+            <a (click)="onClickLike(question.likes, question.id)"><mat-icon *ngIf="!question.likes">favorite_border</mat-icon></a>
+            <a (click)="onClickLike(question.likes, question.id)"><mat-icon *ngIf="question.likes">favorite</mat-icon>&nbsp;{{question.likes}}</a> &nbsp;&nbsp;
             {{ question.text }}
             <a class="linkAnswer" [routerLink]="['/answer', question.id, question.text]"> <span>
                 total de respostas: {{question.quantityAnswer}}</span>

@@ -13,4 +13,8 @@ routes.post("/answer/", AnswerController.post);
 routes.get("/question", QuestionController.get);
 routes.get("/answer", AnswerController.get);
 
+routes.put("/question", QuestionController.put);
+routes.put("/answer", AnswerController.put);
+
 module.exports = routes;
+

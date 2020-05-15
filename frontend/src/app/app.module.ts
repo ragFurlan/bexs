@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 import { APIRestService } from './../app/API.Reference/APIRest.service';
 import { ConfigService } from './services/config.service';
 import { HttpModule, XHRBackend, Http, RequestOptions } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
 
 export function loadConfig(config: ConfigService) {
   return () => config.load(undefined);
@@ -29,7 +31,9 @@ export function loadConfig(config: ConfigService) {
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [
     ConfigService,
@@ -43,6 +47,7 @@ export function loadConfig(config: ConfigService) {
     AnswerService,
     APIRestService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [MatIconModule]
 })
 export class AppModule { }

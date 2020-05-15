@@ -5,7 +5,10 @@
             <h2>{{question}}</h2>
         </div>  
         <div class="item" *ngFor="let answer of listAnswer">
-            {{ answer.text }}
+            <a (click)="onClickLike(answer.likes,answer._id)"><mat-icon *ngIf="!answer.likes">favorite_border</mat-icon></a>
+            <a (click)="onClickLike(answer.likes,answer._id)"><mat-icon *ngIf="answer.likes">favorite</mat-icon>&nbsp;{{answer.likes}}</a>&nbsp;&nbsp;
+            &nbsp;&nbsp;
+            {{ answer.text }} 
         </div>    
         <div class="item">
             <br>
