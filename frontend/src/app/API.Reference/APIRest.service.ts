@@ -7,6 +7,7 @@ import 'rxjs/Rx';
 import 'rxjs/add/observable/throw';
 import { Result } from '../model/Result';
 import { config } from '../../app/services/config.service';
+import { stringify } from 'querystring';
 
 @Injectable()
 export class APIRestService {
@@ -27,9 +28,6 @@ export class APIRestService {
         let result: Observable<HttpEvent<T>>;
         return this.http.get<T>(endPoint.url, this.optionArgs()).pipe(
             tap(resp => {
-                var teste = resp.type;
-               
-
                 return resp;
             }),
             catchError(this.handleError)
@@ -48,7 +46,8 @@ export class APIRestService {
                     return resp;
                 }, catchError(this.handleError));
         } else {
-            this.http.post(endPoint.url, body, this.optionArgs()) .subscribe();
+            this.http.post(endPoint.url, body, this.optionArgs()).subscribe(),
+                catchError(this.handleError);
         }
     }
 

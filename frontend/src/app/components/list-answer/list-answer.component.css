@@ -60,7 +60,16 @@ span {
     font-size: 0.8em;
 }
 
-a { color: inherit; } 
+a { 
+	color: inherit; 
+	text-decoration:none; 
+	cursor:pointer;
+} 
+
 hr {
  border-top: 1px solid red; 
+}
+
+button {
+	cursor: pointer;
 }

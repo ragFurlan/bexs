@@ -3,11 +3,10 @@ const Question = require("../models/Question");
 const mongoose = require("mongoose");
 
 module.exports = {
-    async post(req, res) {
-        console.log("teste a");
+    async post(req, res) {null
         const { newAnswer, user, idQuestion } = req.body;
 
-        const answer = await Answer.create({
+        const answer = await Answer.create({           
             text: newAnswer,
             user: user,
             creationDate: Date.now(),
@@ -19,7 +18,7 @@ module.exports = {
         res.json(answerReturn);
     },
     async get(req, res) {
-      const answer = await Answer.find();
+      const answer = await Answer.find();      
       res.json(answer);
     }
 };

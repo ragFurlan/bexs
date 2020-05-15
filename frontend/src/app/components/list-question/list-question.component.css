@@ -60,4 +60,4 @@ span {
     font-size: 0.8em;
 }
 
-a { color: inherit; } 
+a { color: inherit;  text-decoration:none; } 

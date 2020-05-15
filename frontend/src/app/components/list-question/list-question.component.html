@@ -3,8 +3,8 @@
     <section class="grid">
         <div class="item" *ngFor="let question of listQuestion">
             {{ question.text }}
-            <a class="linkAnswer" [routerLink]="['/resposta', question._id]"> <span>
-                total de respostas: {{question.answers ? question.answers.length : 0}}</span>
+            <a class="linkAnswer" [routerLink]="['/answer', question.id, question.text]"> <span>
+                total de respostas: {{question.quantityAnswer}}</span>
             </a>
         </div>
         <div class="item">
@@ -20,6 +20,7 @@
                         <input placeholder="Pergunta" id="pergunta" type="text" class="validate"
                         ngModel #newQuestion="ngModel" name="newQuestion" id="newQuestion" required>
                         &nbsp;&nbsp;&nbsp;&nbsp;
+                      
                         <button type="submit" class="btn btn-secundario col-2"
                             (click)="onSubmit(formCompleto);">Salvar</button>
                     </div>

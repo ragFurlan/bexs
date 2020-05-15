@@ -1,7 +1,10 @@
 <div>
     <h1>Respostas:</h1>
     <section class="grid">
-        <div class="item" *ngFor="let answer of question[0].answers">
+        <div class="item">
+            <h2>{{question}}</h2>
+        </div>  
+        <div class="item" *ngFor="let answer of listAnswer">
             {{ answer.text }}
         </div>    
         <div class="item">
@@ -11,18 +14,19 @@
         <div class="item">
             <form #formCompleto="ngForm">
                 <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field">
                         <label for="resposta" class="label-text">Deseja responder?&nbsp;&nbsp;&nbsp;&nbsp;
                         </label>
                         <input placeholder="Resposta" id="resposta" type="text" class="validate"
                         ngModel #newAnswer="ngModel" name="newAnswer" id="newAnswer" required>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <button type="submit" class="btn btn-secundario col-2"
+                        &nbsp;&nbsp;&nbsp;&nbsp; 
+                        <a class="btn btn-secundario col-1" routerLink="/">Voltar</a>
+                        &nbsp;&nbsp; 
+                        <button type="submit" class="btn btn-primary col-1"
                             (click)="onSubmit(formCompleto);">Salvar</button>
                     </div>
                 </div>
             </form>
         </div>
-    </section> 
-    
+    </section>     
 </div>

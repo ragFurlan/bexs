@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuestionService } from '../../services/question.service';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { map } from 'rxjs/operators';
+import { Router} from '@angular/router';
 
 
 @Component({
@@ -13,20 +14,21 @@ export class ListQuestionComponent implements OnInit {
 
   listQuestion: any;
   newQuestion; string;
-  constructor(private questionService: QuestionService) { }
+  constructor(private questionService: QuestionService, private router: Router) { }
 
   ngOnInit(): void {
+    this.getQuestions();
 
-    this.questionService.getList().subscribe(resp => {
-      this.listQuestion = resp;
-    });
-    // this.questionService.getList().pipe(map(resp => {
-    //   this.listQuestion = resp.json();
-
-    // }));
   }
 
   onSubmit(form: any) {
-    this.questionService.post(form.value.newQuestion);
+    this.questionService.post(form.value.newQuestion);   
+    location.reload();
+  }
+
+  getQuestions() {
+    this.questionService.getList().subscribe(resp => {
+      this.listQuestion = resp;
+    });
   }
 }

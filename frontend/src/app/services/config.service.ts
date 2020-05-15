@@ -1,8 +1,6 @@
 import { Injectable, Injector } from '@angular/core';
 import { Http } from '@angular/http';
 import { environment } from '../../environments/environment';
-import { Observable, forkJoin } from 'rxjs';
-import { map } from 'rxjs/Operators';
 import 'rxjs/Rx';
 import { AppSettingDev } from '../API.Reference/appSettings/appSettings.DEV';
 import { ConfigAPIDev } from '../API.Reference/config/configAPI.DEV';

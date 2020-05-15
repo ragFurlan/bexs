@@ -6,7 +6,7 @@ import { ListAnswerComponent } from './components/list-answer/list-answer.compon
 export const routes: Routes = [
 
   { path: '', component: ListQuestionComponent },
-  { path: 'resposta/:id', component: ListAnswerComponent }
+  { path: 'answer/:id/:question', component: ListAnswerComponent }
 ];
 
 

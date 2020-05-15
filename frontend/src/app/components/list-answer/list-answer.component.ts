@@ -3,7 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AnswerService } from '../../services/answer.service';
-import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-list-answer',
@@ -11,25 +12,36 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./list-answer.component.css']
 })
 export class ListAnswerComponent implements OnInit {
-  idResponse: string;
-  question: any;
+  idQuestion: string;
+  listAnswer: any;
   newAnswer: string;
+  question: string;
 
-  constructor(route: ActivatedRoute, private answerService: AnswerService) {
-    const idObservable = route.params.pipe(map(p => p.id));
+  constructor(route: ActivatedRoute, private answerService: AnswerService, private router:Router) {
+    const idObservable = route.params.pipe(map(p =>
+      {
+        return { id: p.id, question: p.question};       
+      }));
     idObservable.subscribe(e => {
-      this.idResponse = e;
-      this.answerService.getList().pipe(map(resp => {
-        this.question = resp.json().filter(function (el) {
-          return el.id === parseInt(e);
-        });
-      }))
+      this.idQuestion = e.id;
+      this.question = e.question;
+      this.getAnswers(e.id);
     })
   }
 
   ngOnInit(): void { }
 
   onSubmit(form: any) {
-    this.answerService.post(form.value.newAnswer, this.idResponse);
+    this.answerService.post(form.value.newAnswer, this.idQuestion);
+    location.reload();
+  }
+
+  getAnswers(id: string){
+    this.answerService.getList().subscribe(resp => {
+      this.listAnswer = resp.filter(function (el) {
+            return el.question === id;
+          });
+    });
+    var teste = 5;
   }
 }
