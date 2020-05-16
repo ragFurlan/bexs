@@ -1,28 +1,41 @@
 <div>
     <h1>Questões já cadastradas</h1>
+
     <section class="grid">
-        <div class="item" *ngFor="let question of listQuestion">
-            <a (click)="onClickLike(question.likes, question.id)"><mat-icon *ngIf="!question.likes">favorite_border</mat-icon></a>
-            <a (click)="onClickLike(question.likes, question.id)"><mat-icon *ngIf="question.likes">favorite</mat-icon>&nbsp;{{question.likes}}</a> &nbsp;&nbsp;
-            {{ question.text }}
-            <a class="linkAnswer" [routerLink]="['/answer', question.id, question.text]"> <span>
-                total de respostas: {{question.quantityAnswer}}</span>
-            </a>
+        <div class="item">
+            <input placeholder="Pesquise aqui..." class="form-control" type="text" name="search" [(ngModel)]="filter">
+
         </div>
         <div class="item">
             <br>
-            <hr/>
-        </div>   
+        </div>
+        <div class="item" *ngFor="let question of listQuestion | filter:filter; let i = index">
+            <a (click)="onClickLike(question.likes, question.id)">
+                <mat-icon *ngIf="!question.likes">favorite_border</mat-icon>
+            </a>
+            <a (click)="onClickLike(question.likes, question.id)">
+                <mat-icon *ngIf="question.likes">favorite</mat-icon>&nbsp;{{question.likes}}
+            </a> &nbsp;&nbsp;
+            {{ question.text }}
+            <a class="linkAnswer" [routerLink]="['/answer', question.id, question.text]"> <span>
+                    total de respostas: {{question.quantityAnswer}}</span>
+            </a>
+        </div>
+
+        <div class="item">
+            <br>
+            <hr />
+        </div>
         <div class="item">
             <form #formCompleto="ngForm">
                 <div class="row">
                     <div class="input-field col s12">
                         <label for="pergunta" class="label-text">Deseja fazer uma pergunta?&nbsp;&nbsp;&nbsp;&nbsp;
                         </label>
-                        <input placeholder="Pergunta" id="pergunta" type="text" class="validate"
-                        ngModel #newQuestion="ngModel" name="newQuestion" id="newQuestion" required>
+                        <input placeholder="Pergunta" id="pergunta" type="text" class="validate" ngModel
+                            #newQuestion="ngModel" name="newQuestion" id="newQuestion" required>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                      
+
                         <button type="submit" class="btn btn-secundario col-2"
                             (click)="onSubmit(formCompleto);">Salvar</button>
                     </div>

@@ -14,6 +14,9 @@ export class ListQuestionComponent implements OnInit {
 
   listQuestion: any;
   newQuestion; string;
+  search: any;
+  filter: any;
+  
   constructor(private questionService: QuestionService, private router: Router) { }
 
   ngOnInit(): void {

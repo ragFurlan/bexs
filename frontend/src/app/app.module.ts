@@ -15,6 +15,7 @@ import { ConfigService } from './services/config.service';
 import { HttpModule, XHRBackend, Http, RequestOptions } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 export function loadConfig(config: ConfigService) {
   return () => config.load(undefined);
@@ -33,7 +34,8 @@ export function loadConfig(config: ConfigService) {
     HttpClientModule,
     HttpModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    Ng2SearchPipeModule
   ],
   providers: [
     ConfigService,
@@ -48,6 +50,9 @@ export function loadConfig(config: ConfigService) {
     APIRestService
   ],
   bootstrap: [AppComponent],
-  exports: [MatIconModule]
+  exports: [
+    MatIconModule,
+    Ng2SearchPipeModule
+  ]
 })
 export class AppModule { }
