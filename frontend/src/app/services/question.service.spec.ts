@@ -22,4 +22,8 @@ describe('Validar serviço de questões', () => {
     expect(service.post('Qual o seu nome?')).toBeInstanceOf;
   }));
 
+  it('putLikes', inject([QuestionService], (service: QuestionService) => {
+    expect(service.putLikes(3, '5ebe785c1080fa34c836f0c6')).toBeInstanceOf;
+}));
+
 });

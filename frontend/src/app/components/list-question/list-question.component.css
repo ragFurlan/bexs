@@ -65,3 +65,13 @@ a {
 	text-decoration:none; 	
 	cursor:pointer;
 }
+
+.respondidas {
+    width: 23px;
+    height: 23px;
+}
+
+hr {
+	border-top: 1px solid red; 
+   }
+   

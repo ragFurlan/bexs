@@ -1,7 +1,6 @@
 const Question = require("../models/Question");
 const Answer = require("../models/Answer");
 
-let retorno = [];
 module.exports = {
 
   async get(req, res) {
@@ -54,5 +53,4 @@ module.exports = {
       }
     )
   }
-
 };

@@ -9,13 +9,14 @@ import { QuestionService } from './services/question.service';
 import { AnswerService } from './services/answer.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { APIRestService } from './../app/API.Reference/APIRest.service';
 import { ConfigService } from './services/config.service';
 import { HttpModule, XHRBackend, Http, RequestOptions } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2SearchPipeModule  } from 'ng2-search-filter';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { AnsweredFilterDirective } from './directives/answered-filter.directive';
 
 export function loadConfig(config: ConfigService) {
   return () => config.load(undefined);
@@ -25,7 +26,8 @@ export function loadConfig(config: ConfigService) {
   declarations: [
     AppComponent,
     ListQuestionComponent,
-    ListAnswerComponent
+    ListAnswerComponent,
+    AnsweredFilterDirective
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ export function loadConfig(config: ConfigService) {
     HttpModule,
     BrowserAnimationsModule,
     MatIconModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    MatCheckboxModule
   ],
   providers: [
     ConfigService,
@@ -52,7 +55,8 @@ export function loadConfig(config: ConfigService) {
   bootstrap: [AppComponent],
   exports: [
     MatIconModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    MatCheckboxModule
   ]
 })
 export class AppModule { }

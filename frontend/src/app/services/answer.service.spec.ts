@@ -38,4 +38,8 @@ describe('Validar serviço de respostas', () => {
         expect(service.post('Meu nome é Roberta', '5ebe785c1080fa34c836f0c6')).toBeInstanceOf;
     }));
 
+    it('putLikes', inject([AnswerService], (service: AnswerService) => {
+        expect(service.putLikes(3, '5ebe785c1080fa34c836f0c6')).toBeInstanceOf;
+    }));
+
 });

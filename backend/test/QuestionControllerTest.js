@@ -30,4 +30,21 @@ describe('QuestionController', () => {
         }, 10000);
 
     });
+
+    it('Testando PUT ', (done) => {
+        let body = {
+            likes: "3",
+            user: "ana02"
+        }
+        setTimeout(function () {
+            chai.request('http://localhost:3333')
+                .put('/question?id=5ebe79a71080fa34c836f0c9')
+                .send(body) // vamos enviar esse arquivo
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        }, 10000);
+
+    });
 });

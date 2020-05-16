@@ -15,17 +15,8 @@ export class APIRestService {
 
 
     public get<T>(apiName: string, params?: string[]): Observable<HttpEvent<T>> {
-       
-        const endPoint = this.getUrl(apiName, params);
-        if (endPoint.mock) {
-            this.http.get(endPoint.url, this.optionArgs())
-                .subscribe(resp => {
-                    //resp = this.tratarMock(resp, params, 'post');
 
-                    return resp;
-                }, catchError(this.handleError));
-        }
-        let result: Observable<HttpEvent<T>>;
+        const endPoint = this.getUrl(apiName, params);
         return this.http.get<T>(endPoint.url, this.optionArgs()).pipe(
             tap(resp => {
                 return resp;
@@ -38,33 +29,17 @@ export class APIRestService {
 
         const endPoint = this.getUrl(apiName, params);
 
-        if (endPoint.mock) {
-            this.http.get(endPoint.url, this.optionArgs())
-                .subscribe(resp => {
-                    //resp = this.tratarMock(resp, params, 'post');
+        this.http.post(endPoint.url, body, this.optionArgs()).subscribe(),
+            catchError(this.handleError);
 
-                    return resp;
-                }, catchError(this.handleError));
-        } else {
-            this.http.post(endPoint.url, body, this.optionArgs()).subscribe(),
-                catchError(this.handleError);
-        }
     }
 
     public put(apiName: string, body: any, params?: string[]): void {
         const endPoint = this.getUrl(apiName, undefined);
 
-        if (endPoint.mock) {
-            this.http.get(endPoint.url, this.optionArgs())
-                .subscribe(resp => {
-                    //resp = this.tratarMock(resp, params, 'post');
+        this.http.put(endPoint.url + "?id=" + params[0], body, this.optionArgs()).subscribe(),
+            catchError(this.handleError);
 
-                    return resp;
-                }, catchError(this.handleError));
-        } else {
-            this.http.put(endPoint.url + "?id="+ params[0], body, this.optionArgs()).subscribe(),
-                catchError(this.handleError);
-        }
     }
 
 
@@ -76,30 +51,25 @@ export class APIRestService {
             url: ''
         };
 
-        if (_config.mock) {
-            retorno.url = `./assets/data/stub/${_config.json}`;
-        } else {
-            let param = '';
-            if (params) {
-                params.forEach((value) => {
-                    param += '/' + value;
-                });
-            }
-            retorno.url = encodeURI(_config.host + param);
+        let param = '';
+        if (params) {
+            params.forEach((value) => {
+                param += '/' + value;
+            });
         }
-
+        retorno.url = encodeURI(_config.host + param);
         return retorno;
     }
 
     private optionArgs(): any {
 
-         const headers = new HttpHeaders().set('Content-Type', 'application/json');
+        const headers = new HttpHeaders().set('Content-Type', 'application/json');
         return {
             headers: headers,
             responseType: "json",
             observe: "body"
         }
-    }  
+    }
     private handleError(error: any) {
         return Observable.throw(error || 'Server error');
     }

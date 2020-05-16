@@ -5,8 +5,7 @@ var Answershema = new mongoose.Schema({
   user: String,
   creationDate: Date,
   question: { type: mongoose.Schema.Types.ObjectId, ref: "Question" },
-  likes: Number
- 
+  likes: Number 
 });
 
 module.exports = mongoose.model("Answer", Answershema);

@@ -3,13 +3,16 @@
 
     <section class="grid">
         <div class="item">
-            <input placeholder="Pesquise aqui..." class="form-control" type="text" name="search" [(ngModel)]="filter">
-
+            <input placeholder="Pesquise aqui..." class="form-control" type="text" name="search" [(ngModel)]="filter">&nbsp;&nbsp;&nbsp;
+            
+       <input type="checkbox" id="respondidas" class="respondidas radio-checkbox" [value]="naoRespondidas" (click)="onSubmitRespondidas()"
+       >&nbsp; Questões não respondidas 
         </div>
         <div class="item">
             <br>
         </div>
-        <div class="item" *ngFor="let question of listQuestion | filter:filter; let i = index">
+        <div class="item" *ngFor="let question of listQuestion | filter:filter; let i = index"
+        appAnsweredFilter quantityAnswers={{question.quantityAnswer}} naoRespondidasDirective={{naoRespondidas}}>
             <a (click)="onClickLike(question.likes, question.id)">
                 <mat-icon *ngIf="!question.likes">favorite_border</mat-icon>
             </a>
