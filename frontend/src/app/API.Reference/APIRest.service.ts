@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 import { map, catchError, tap, retry, flatMap } from 'rxjs/operators';
 import 'rxjs/Rx';
 import 'rxjs/add/observable/throw';
-import { Result } from '../model/Result';
 import { config } from '../../app/services/config.service';
 import { stringify } from 'querystring';
 
