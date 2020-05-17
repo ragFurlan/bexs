@@ -17,7 +17,7 @@ export class AnsweredFilterDirective implements OnChanges{
   ngOnChanges(changes: SimpleChanges){
 
     if(this.naoRespondidasDirective == "true"){
-      this.el.nativeElement.hidden = this.quantityAnswers === "0";     
+      this.el.nativeElement.hidden = this.quantityAnswers !== "0";     
     }
     else{
       this.el.nativeElement.hidden = false; 
