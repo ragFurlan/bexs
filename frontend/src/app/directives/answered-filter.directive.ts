@@ -10,7 +10,7 @@ export class AnsweredFilterDirective implements OnChanges{
   //@Input('naoRespondidasDirective') naoRespondidas: false;
   // @Input('quantityAnswers') 0: number;
 
-  constructor(private el: ElementRef) {  
+  constructor(public el: ElementRef) {  
     
   }
 
