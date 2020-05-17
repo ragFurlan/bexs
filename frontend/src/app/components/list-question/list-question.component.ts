@@ -28,8 +28,15 @@ export class ListQuestionComponent implements OnInit {
   }
 
   onSubmit(form: any) {
+    if (form.value.newQuestion && form.value.newQuestion !== "") {
     this.questionService.post(form.value.newQuestion);
     location.reload();
+
+    }
+    else{
+      alert("Favor, fazer uma pergunta!");
+    }
+
   }
 
   onClickLike(likes: number, id: string) {
@@ -49,17 +56,6 @@ export class ListQuestionComponent implements OnInit {
   }
 
     onSubmitRespondidas() {
-      this.naoRespondidas = !this.naoRespondidas;
-      // if (this.naoRespondidas) {
-      //   this.listQuestion.filter(function (el) {
-      //     return el.quantityAnswer !== "0";
-      //   });
-      // }
-      // else{
-      //   this.listQuestion.filter(function (el) {
-      //     return el.quantityAnswer === "0";
-      //   });
-      // }
-      // document.getElementById("respondidas");
+      this.naoRespondidas = !this.naoRespondidas;      
     }
 }

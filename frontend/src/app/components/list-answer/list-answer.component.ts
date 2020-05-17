@@ -15,7 +15,7 @@ export class ListAnswerComponent implements OnInit {
   idQuestion: string;
   listAnswer: any;
   newAnswer: string;
-  question: string;  
+  question: string;
   filter: any;
 
   constructor(route: ActivatedRoute, private answerService: AnswerService, private router: Router) {
@@ -32,8 +32,13 @@ export class ListAnswerComponent implements OnInit {
   ngOnInit(): void { }
 
   onSubmit(form: any) {
-    this.answerService.post(form.value.newAnswer, this.idQuestion);
-    location.reload();
+
+    if (form.value.newAnswer && form.value.newAnswer !== "") {
+      this.answerService.post(form.value.newAnswer, this.idQuestion);
+      location.reload();
+    } else {
+      alert("Favor, responda a pergunta!");
+    }
   }
 
   onClickLike(likes: number, _id: string) {
